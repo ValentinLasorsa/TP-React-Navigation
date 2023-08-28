@@ -1,39 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import {NavigationContainer, createNativeStackNavigator } from '@react-navigation/native';
-import LogInScreen from "./src/components/LogInScreen";
-import Screen1 from "./src/components/Screen1";
-import Screen2 from "./src/components/Screen2";
-import Screen3 from "./src/components/Screen3";
+import LogInScreen from "./src/screens/LogInScreen";
+import Screen1 from "./src/screens/Screen1";
+import Screen2 from "./src/screens/Screen2";
+import Screen3 from "./src/screens/Screen3";
+import Menu from "./src/components/Menu";
 
 const Stack = createNativeStackNavigator();
 
-const App = () => {
+const App = ({navigation}) => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
           name="Login"
           component={LogInScreen}
           options={{title: 'Login'}}
         />
+        
     
         <Stack.Screen
           name="Screen01"
           component={Screen1}
-          options={{title: 'Welcome'}}
+          options={{title: 'Screen1'}}
         />
 
         <Stack.Screen
           name="Screen02"
           component={Screen2}
-          options={{title: 'Welcome'}}
+          options={{title: 'Screen2'}}
         />
 
         <Stack.Screen
           name="Screen03"
           component={Screen3}
-          options={{title: 'Welcome'}}
+          options={{title: 'Screen3'}}
         />
  
       </Stack.Navigator>
